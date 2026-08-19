@@ -278,8 +278,12 @@ def build_updates(current, groups):
 
 def main():
     clients = read_clients()
+
+    # V3.1.1：允许在 0 个 VPS 的全新 Komari 主控上完成安装。
+    # 规则会保持为空，等以后 Agent 加入后由定时任务自动分类并同步。
     if not clients:
-        raise RuntimeError("当前没有任何 VPS")
+        log("当前暂无 VPS：将保持空规则并等待新节点加入")
+
     existing = {str(c["uuid"]) for c in clients}
     names = {str(c["uuid"]): (c["name"] or str(c["uuid"])) for c in clients}
     rules = get_current_rules()
@@ -313,7 +317,7 @@ def main():
     state["last_applied"] = {m: sorted(enabled[m]) for m in ("cpu", "ram", "disk")}
     save_state(state)
     if first_run:
-        log("V3.1 状态文件初始化完成")
+        log("V3.1.1 状态文件初始化完成")
     return 0
 
 

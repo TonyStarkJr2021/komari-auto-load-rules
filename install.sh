@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-VERSION="3.1.0"
+VERSION="3.1.1"
 REPO_OWNER="TonyStarkJr2021"
 REPO_NAME="komari-auto-load-rules"
 BRANCH="main"
