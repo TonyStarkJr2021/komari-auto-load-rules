@@ -1,0 +1,10 @@
+*.log
+*.bak
+*.tmp
+__pycache__/
+*.pyc
+api_key
+state.json
+.DS_Store
+.vscode/
+.idea/
