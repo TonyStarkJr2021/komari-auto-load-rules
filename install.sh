@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-VERSION="3.1.1"
+APP_VERSION="3.1.1"
 REPO_OWNER="TonyStarkJr2021"
 REPO_NAME="komari-auto-load-rules"
 BRANCH="main"
@@ -29,7 +29,7 @@ command -v systemctl >/dev/null 2>&1 || { error "当前系统不是受支持的 
 
 echo
 echo "=================================================="
-echo " Komari Auto Load Rules V${VERSION}"
+echo " Komari Auto Load Rules V${APP_VERSION}"
 echo " Multi-Distro / systemd"
 echo "=================================================="
 echo
@@ -247,7 +247,7 @@ systemctl enable --now komari-auto-load-rules.timer
 
 echo
 echo "=================================================="
-echo " Komari Auto Load Rules V${VERSION} 安装完成"
+echo " Komari Auto Load Rules V${APP_VERSION} 安装完成"
 echo "=================================================="
 echo "系统：${OS_NAME}"
 echo "服务：${KOMARI_SERVICE}"
